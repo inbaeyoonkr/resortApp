@@ -102,6 +102,7 @@ h6 {
   justify-content: space-between;
 }
 .nav-btn {
+  float: right;
   background: transparent;
   border: none;
   cursor: pointer;
