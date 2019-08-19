@@ -33,9 +33,17 @@ export default class RoomProvider extends Component {
     });
     return tempItems;
   }
+
+  // slug 값을 주면 room 정보를 가지는 객체다. property는 object를 위해 데이터를 저장한다.
+  getRoom = slug => {
+    let tempRoom = [...this.state.rooms];
+    const room = tempRoom.find(room => room.slug === slug);
+    return room;
+  };
+
   render() {
     return (
-      <RoomContext.Provider value={{ ...this.state }}>
+      <RoomContext.Provider value={{ ...this.state, getRoom: this.getRoom }}>
         {this.props.children}
       </RoomContext.Provider>
     );
