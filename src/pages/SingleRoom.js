@@ -45,7 +45,6 @@ export default class SingleRoom extends Component {
       price
     } = room;
 
-    console.log(room);
     const [mainImg, ...defaultImg] = images;
     return (
       <>
