@@ -77,7 +77,72 @@ export default function RoomsFilter({ rooms }) {
           </select>
         </div>
         {/* end select guests */}
+        {/* select room price */}
+        <div className='form-group'>
+          <label htmlFor='price'>price ${price}</label>
+          <input
+            type='range'
+            name='price'
+            min={minPrice}
+            max={maxPrice}
+            defaultValue={maxPrice}
+            id='price'
+            onChange={handleChange}
+            className='form-control'
+          />
+        </div>
+        {/* end room price */}
+        {/* room size */}
+        <div className='form-group'>
+          <label htmlFor='size'>room size</label>
+          <div className='size-inputs'>
+            <input
+              type='number'
+              name='minSize'
+              id='size'
+              value={minSize}
+              onChange={handleChange}
+              className='size-input'
+            />
+            <input
+              type='number'
+              name='maxSize'
+              id='size'
+              value={maxSize}
+              onChange={handleChange}
+              className='size-input'
+            />
+          </div>
+        </div>
+        {/* end room size */}
+        {/* extras */}
+        <div className='form-group'>
+          <div className='single-extra'>
+            <label htmlFor='breakfast'>breakfast</label>
+            <input
+              type='checkbox'
+              name='breakfast'
+              id='breakfast'
+              checked={breakfast}
+              onChange={handleChange}
+            />
+          </div>
+          <div className='single-extra'>
+            <label htmlFor='pets'>pets</label>
+            <input
+              type='checkbox'
+              name='pets'
+              id='pets'
+              checked={pets}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        {/* end extras */}
       </form>
     </section>
   );
 }
+
+// tag에서 name 속성이 중요한 이유가 state와 연결되기 때문이다.
+// label의 htmlFor와 input의 id는 같아야 한다.
